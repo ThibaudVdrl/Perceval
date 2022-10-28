@@ -2,3 +2,14 @@ numpy
 quandelibc
 tabulate
 pytest
+setuptools
+multipledispatch
+
+sympy
+matplotlib
+scipy
+tqdm
+Deprecated
+requests
+drawSvg
+protobuf>=4.21.2

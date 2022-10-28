@@ -23,6 +23,7 @@
 import random
 
 import perceval as pcvl
+<<<<<<< HEAD
 import perceval.lib.symb as symb
 
 # definition of the circuit
@@ -30,6 +31,15 @@ C = pcvl.Circuit(2)
 C.add((0, 1), symb.BS())
 C.add(1, symb.PS(1))
 C.add((0, 1), symb.BS())
+=======
+from perceval.components.unitary_components import BS, PS
+
+# definition of the circuit
+C = pcvl.Circuit(2)
+C.add((0, 1), BS())
+C.add(1, PS(1))
+C.add((0, 1), BS())
+>>>>>>> 73437bc076cfdc6a556cbd4967f9c1b4ca4da9b0
 
 N = 100
 

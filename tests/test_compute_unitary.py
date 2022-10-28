@@ -21,8 +21,12 @@
 # SOFTWARE.
 
 import perceval as pcvl
+<<<<<<< HEAD
 import perceval.lib.symb as symb
 import perceval.lib.phys as phys
+=======
+import perceval.components.unitary_components as comp
+>>>>>>> 73437bc076cfdc6a556cbd4967f9c1b4ca4da9b0
 import numpy as np
 
 
@@ -34,6 +38,7 @@ def _check_unitary(component: pcvl.ACircuit):
     assert np.allclose(u_symb.tonp(), u_num)
 
 
+<<<<<<< HEAD
 def test_phys_BS_unitary():
     bs = phys.BS(theta=0.43, phi_a=0.26, phi_b=1.6, phi_d=0.04)
     _check_unitary(bs)
@@ -71,4 +76,27 @@ def test_phys_PR_unitary():
 
 def test_symb_PR_unitary():
     wp = symb.PR(delta=0.37)
+=======
+def test_BS_unitary():
+    bs = comp.BS(theta=0.43, phi_tl=0.26, phi_bl=1.6, phi_tr=0.04, phi_br=2.13)
+    _check_unitary(bs)
+    bs = comp.BS.H(theta=0.43, phi_tl=0.26, phi_bl=1.6, phi_tr=0.04, phi_br=2.13)
+    _check_unitary(bs)
+    bs = comp.BS.Ry(theta=0.43, phi_tl=0.26, phi_bl=1.6, phi_tr=0.04, phi_br=2.13)
+    _check_unitary(bs)
+
+
+def test_PS_unitary():
+    bs = comp.PS(phi=0.82)
+    _check_unitary(bs)
+
+
+def test_WP_unitary():
+    wp = comp.WP(delta=0.24, xsi=0.58)
+    _check_unitary(wp)
+
+
+def test_PR_unitary():
+    wp = comp.PR(delta=0.37)
+>>>>>>> 73437bc076cfdc6a556cbd4967f9c1b4ca4da9b0
     _check_unitary(wp)
